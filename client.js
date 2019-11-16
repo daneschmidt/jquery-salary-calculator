@@ -54,10 +54,15 @@ function render() {
         const employee = employeeInfo[i];
 
     $('.js-employeeInfoDisplay').append(`
-        <div data-id="${i}">
-            <span>${employee.firstName} ${employee.lastName} ${employee.idNumber} ${employee.jobTitle} ${employee.annualSalary}</span>
-            <button class ="js-button-bye">delete</button>
-        </div>
+        
+        <tr data-id="${i}">
+            <td>${employee.firstName}</td>
+            <td>${employee.lastName}</td>
+            <td>${employee.idNumber}</td>
+            <td>${employee.jobTitle}</td>
+            <td>${employee.annualSalary}</td>
+            <td><button class ="js-button-bye">delete</button></td>
+        </tr>
     `);
 }
 

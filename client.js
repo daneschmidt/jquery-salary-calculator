@@ -21,22 +21,34 @@ function submitEmployeeInfoForm(event) {
 
         }
 
-        employeeInfo.push(employeeInfoObject);
-
-        $('.js-employeeInfoDisplay').append(`
-            <div>
-                <span>${employeeInfoObject.firstName} ${employeeInfoObject.lastName} ${employeeInfoObject.idNumber} ${employeeInfoObject.jobTitle} ${employeeInfoObject.annualSalary}</span>
-                <button class ="js-button-bye">delete</button>
-            </div>
-        
-        `);
-
+        addEmployee(employeeInfoObject); 
         monthlyTotal += employeeInfoObject.annualSalary;
-        $('#monthly-total').text(`Monthly Salary Total : $${monthlyTotal}`);
+        render();
+        
 
         console.log(employeeInfo);
 
     resetInputs();
+}
+
+function addEmployee(employeeInfoObject) {
+    employeeInfo.push(employeeInfoObject);
+
+}
+
+function render() {
+    $('.js-employeeInfoDisplay').empty();
+
+    for (let employee of employeeInfo) {
+    $('.js-employeeInfoDisplay').append(`
+        <div>
+            <span>${employee.firstName} ${employee.lastName} ${employee.idNumber} ${employee.jobTitle} ${employee.annualSalary}</span>
+            <button class ="js-button-bye">delete</button>
+        </div>
+    `);
+}
+
+    $('#monthly-total').text(`Monthly Salary Total : $${monthlyTotal}`);
 }
 
 function removeEmployee(){

@@ -29,6 +29,20 @@ function submitEmployeeInfoForm(event) {
         console.log(employeeInfo);
 
     resetInputs();
+
+    bleedingCash();
+
+}
+
+function bleedingCash() {
+    if(monthlyTotal >= 20000) {
+        document.body.style.backgroundColor = "red";
+        console.log ('we are bleeding cash boss');
+
+    }else {
+
+    }
+
 }
 
 function addEmployee(employeeInfoObject) {

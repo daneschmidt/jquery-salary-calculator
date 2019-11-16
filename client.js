@@ -30,9 +30,18 @@ function submitEmployeeInfoForm(event) {
 
     resetInputs();
 
+    // divideIt();
+
     bleedingCash();
 
 }
+
+// function calculateMonthly(){
+//     finalTotal = 0;
+//     for ( let employee of employeeInfo){
+//         finalTotal += (employee.annualSalary / 12);
+//     }
+// }
 
 function bleedingCash() {
     if(monthlyTotal >= 20000) {
@@ -54,7 +63,7 @@ function addEmployee(employeeInfoObject) {
 function findTotal() {
     monthlyTotal = 0;
     for (let employee of employeeInfo) {
-        monthlyTotal += employee.annualSalary;
+        monthlyTotal += employee.annualSalary /12;
 
     }
 
@@ -80,7 +89,7 @@ function render() {
     `);
 }
 
-    $('#monthly-total').text(`Monthly Salary Total : $${monthlyTotal}`);
+    $('#monthly-total').text(`Monthly Salary Total : $${monthlyTotal.toFixed(2)}`);
 }
 
 function removeEmployee(){

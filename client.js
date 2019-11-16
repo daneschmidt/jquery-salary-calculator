@@ -41,9 +41,9 @@ function render() {
 
     for (let i = 0; i < employeeInfo.length; i++) {
         const employee = employeeInfo[i];
-        
+
     $('.js-employeeInfoDisplay').append(`
-        <div>
+        <div data-id="${i}">
             <span>${employee.firstName} ${employee.lastName} ${employee.idNumber} ${employee.jobTitle} ${employee.annualSalary}</span>
             <button class ="js-button-bye">delete</button>
         </div>
@@ -54,7 +54,10 @@ function render() {
 }
 
 function removeEmployee(){
-    $(this).parent().remove();
+    const id = $(this).parent().data('id');
+    employeeInfo.splice(id, 1);
+    // $(this).parent().remove();
+    render();
 
 }
 

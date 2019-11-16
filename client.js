@@ -1,28 +1,17 @@
 const employeeInfo = [];
+let monthlyTotal = 0;
 
 $(document).ready(init);
 
 function init() {
     console.log('we ready to rock and roll');
     $('#employeeInfoForm').on('submit', submitEmployeeInfoForm);
+    $('.js-employeeInfoDisplay').on('click', '.js-button-bye', removeEmployee);
 }
 
 function submitEmployeeInfoForm(event) {
     event.preventDefault();
     
-        // let firstName = $('#firstName').val();
-        // let lastName = $('#lastName').val();
-        // let idNumber =  parseInt($('#idNumber').val());
-        // let jobTitle = $('#jobTitle').val();
-        // let annualSalary = parseInt($('#annualSalary').val());
-
-        // $('.js-employeeInfoDisplay').append(`
-        //     <div>
-        //         <p>${firstName} ${lastName} ${idNumber} ${jobTitle} ${annualSalary}</p>
-        //     </div>
-        
-        // `);
-
         const employeeInfoObject = {
             firstName: $('#firstName').val(),
             lastName: $('#lastName').val(),
@@ -34,9 +23,25 @@ function submitEmployeeInfoForm(event) {
 
         employeeInfo.push(employeeInfoObject);
 
+        $('.js-employeeInfoDisplay').append(`
+            <div>
+                <span>${employeeInfoObject.firstName} ${employeeInfoObject.lastName} ${employeeInfoObject.idNumber} ${employeeInfoObject.jobTitle} ${employeeInfoObject.annualSalary}</span>
+                <button class ="js-button-bye">delete</button>
+            </div>
+        
+        `);
+
+        monthlyTotal += employeeInfoObject.annualSalary;
+        $('#monthly-total').text(`Monthly Salary Total : $${monthlyTotal}`);
+
         console.log(employeeInfo);
 
     resetInputs();
+}
+
+function removeEmployee(){
+    $(this).parent().remove();
+
 }
 
 function resetInputs(){
@@ -51,12 +56,4 @@ function resetInputs(){
 function testFunction() {
 console.log('you passed the test');
 }
-
-
-
-
-
-
-
-
 

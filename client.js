@@ -39,7 +39,9 @@ function addEmployee(employeeInfoObject) {
 function render() {
     $('.js-employeeInfoDisplay').empty();
 
-    for (let employee of employeeInfo) {
+    for (let i = 0; i < employeeInfo.length; i++) {
+        const employee = employeeInfo[i];
+        
     $('.js-employeeInfoDisplay').append(`
         <div>
             <span>${employee.firstName} ${employee.lastName} ${employee.idNumber} ${employee.jobTitle} ${employee.annualSalary}</span>

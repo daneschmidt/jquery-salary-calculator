@@ -23,15 +23,28 @@ function submitEmployeeInfoForm(event) {
         
         `);
 
-        $('#firstName').val(``);
-        $('#lastName').val(``);
-        $('#idNumber').val(``);
-        $('#jobTitle').val(``);
-        $('#annualSalary').val(``);
-    
+       
+    resetInputs();
+}
+
+function resetInputs(){
+    $('#firstName').val(``);
+    $('#lastName').val(``);
+    $('#idNumber').val(``);
+    $('#jobTitle').val(``);
+    $('#annualSalary').val(``);
+
 }
 
 function testFunction() {
 console.log('you passed the test');
 }
+
+
+
+
+
+
+
+
 

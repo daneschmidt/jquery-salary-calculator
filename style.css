@@ -1,0 +1,12 @@
+table {
+    width: 100%;
+}
+
+th {
+    background-color: lightgray;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+}

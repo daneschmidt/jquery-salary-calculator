@@ -4,12 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Salary Calculator</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="client.js"></script>
 </head>
+<header><h1>Salary Calculator<h1></header>
 <body>
-    
+
+<form id="employeeInfoForm">
+    <input type="text" name="firstName" id="firstName" placeholder="Enter First Name">
+    <input type="text" name="lastName" id="lastName" placeholder="Enter Last Name">
+    <input type="text" name="idNumber" id="idNumber" placeholder="Enter ID Number">
+    <input type="text" name="jobTitle" id="jobTitle" placeholder="Enter Job Title">
+    <input type="text" name="annualSalary" id="annualSalary" placeholder="Enter Annual Salary">
+    <button id ="submitButton" name="submitButton">Submit</button>
+
+</form>
+<br />
+<table>
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>ID Number</th>
+            <th>Job Title</th>
+            <th>Annual Salary</th>
+        </tr>
+    </thead>
+
+    <tbody class="js-employeeInfo">
+
+    </tbody>
+
+</table>
+
+
 </body>
 </html>

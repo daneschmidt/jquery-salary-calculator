@@ -1,9 +1,14 @@
 # jQuery Salary Calculator
 
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
 
-## Description
+## Monthly Cost Calculator
 
-Your project description goes here. What problem did you solve? How did you solve it?
+This application will calculate the monthly payroll costs for the month via the provided employee information. 
+
 
 Additional README details can be found [here](https://github.com/PrimeAcademy/github-finalization-assignment).
+
+
+//add built with section
+
+//add usage section

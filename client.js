@@ -9,18 +9,29 @@ function init() {
 
 function submitEmployeeInfoForm(event) {
     event.preventDefault();
-    console.log (
-        $('#firstName').val(),
-        $('#lastName').val(),
-        parseInt($('#idNumber').val()),
-        $('#jobTitle').val(),
-        parseInt($('#annualSalary').val())
-    );
-
     
+       let firstName = $('#firstName').val();
+        let lastName = $('#lastName').val();
+        let idNumber =  parseInt($('#idNumber').val());
+        let jobTitle = $('#jobTitle').val();
+        let annualSalary = parseInt($('#annualSalary').val());
 
+        $('.js-employeeInfoDisplay').append(`
+            <div>
+                <p>${firstName} ${lastName} ${idNumber} ${jobTitle} ${annualSalary}</p>
+            </div>
+        
+        `);
+
+        $('#firstName').val(``);
+        $('#lastName').val(``);
+        $('#idNumber').val(``);
+        $('#jobTitle').val(``);
+        $('#annualSalary').val(``);
+    
 }
 
 function testFunction() {
 console.log('you passed the test');
 }
+

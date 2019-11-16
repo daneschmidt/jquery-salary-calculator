@@ -22,7 +22,7 @@ function submitEmployeeInfoForm(event) {
         }
 
         addEmployee(employeeInfoObject); 
-        monthlyTotal += employeeInfoObject.annualSalary;
+        // monthlyTotal += employeeInfoObject.annualSalary;
         render();
         
 
@@ -33,11 +33,22 @@ function submitEmployeeInfoForm(event) {
 
 function addEmployee(employeeInfoObject) {
     employeeInfo.push(employeeInfoObject);
+    render();
+
+}
+
+function findTotal() {
+    monthlyTotal = 0;
+    for (let employee of employeeInfo) {
+        monthlyTotal += employee.annualSalary;
+
+    }
 
 }
 
 function render() {
     $('.js-employeeInfoDisplay').empty();
+    findTotal();
 
     for (let i = 0; i < employeeInfo.length; i++) {
         const employee = employeeInfo[i];

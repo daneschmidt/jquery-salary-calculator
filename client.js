@@ -26,7 +26,7 @@ function submitEmployeeInfoForm(event) {
             annualSalary: parseInt($('#annualSalary').val()),
 
 
-            montlySalary: parseInt($('#annualSalary').val()) /12
+            monthlySalary: parseInt($('#annualSalary').val()) /12
 
 
 
@@ -90,7 +90,7 @@ function render() {
             <td>${employee.idNumber}</td>
             <td>${employee.jobTitle}</td>
             <td>${employee.annualSalary}</td>
-            <td>${employee.monthlySalary}</td>
+            <td>${employee.monthlySalary.toFixed(2)}</td>
             <td><button class ="js-button-bye">delete</button></td>
         </tr>
     `);

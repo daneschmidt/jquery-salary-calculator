@@ -45,7 +45,7 @@ function submitEmployeeInfoForm(event) {
 
 function bleedingCash() {
     if(monthlyTotal >= 20000) {
-        document.body.style.backgroundColor = "red";
+        $('.js-monthly-total-display').css("color", "red",);
         console.log ('we are bleeding cash boss');
 
     }else {

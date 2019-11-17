@@ -23,7 +23,12 @@ function submitEmployeeInfoForm(event) {
             lastName: $('#lastName').val(),
             idNumber: parseInt($('#idNumber').val()),
             jobTitle: $('#jobTitle').val(),
-            annualSalary: parseInt($('#annualSalary').val())
+            annualSalary: parseInt($('#annualSalary').val()),
+
+
+            montlySalary: parseInt($('#annualSalary').val()) /12
+
+
 
         }
 
@@ -69,7 +74,7 @@ function findTotal() {
 
 }
 
-//this function is redrawing the portion of the screen that I have targeted which contains the information table I wish to update each time the submit button is clicked.  I need to dig further on this one... I know that its looping through the array here... but im not clear on the mechanics of exactly what is happening here... I plan to rewatch the lecture videos this week surronding this topic.
+//this function is redrawing the portion of the screen that I have targeted which contains the information table I wish to update each time the submit button is clicked.  I need to dig further on this one... I know that its looping through the array here... but im not clear on the mechanics of exactly what is happening here entirely... I plan to rewatch the lecture videos this week surronding this topic.
 function render() {
     $('.js-employeeInfoDisplay').empty();
     findTotal();
@@ -85,6 +90,7 @@ function render() {
             <td>${employee.idNumber}</td>
             <td>${employee.jobTitle}</td>
             <td>${employee.annualSalary}</td>
+            <td>${employee.monthlySalary}</td>
             <td><button class ="js-button-bye">delete</button></td>
         </tr>
     `);
@@ -108,26 +114,16 @@ function resetInputs(){
     $('#idNumber').val(``);
     $('#jobTitle').val(``);
     $('#annualSalary').val(``);
+    $('#monthlySalary').val(``);
 
 }
 
-//Now Stevie, now don't be nervous, honey, ok?
-// I'm gonna go in and I'm gonna introduce you and then you're gonna come in with your guitar and you're gonna play that nice, nice music you were telling me about
-// And while you're doing that, I'll be sitting in the back of the room.
-// we'll have such a good time, so don't be nervous honey.
-// It will relax everybody and we'll be so happy.
-// I'm gonna go now, I'll introduce you, ok?
-// Heads up. Now you kids you, all of you, calm down.
-// That's good, ok.
-// Everyone in your own seats, that's good. ok.
-// now, little Stevie Vai is going to play a composition on the guitar.
-// He wrote it all by himself.
-// Ok. Stevie, bring your three friends up, they can play with you.
-// That Stevie Vai, what a nice little boy.
-// I wrote this song for all my friends.
+
+
+
+
 // When I grow up, I'm gonna be a famous rock 'n' roll guitar player.
-// Love it, eh, he, he, go ahead.
-// And that is my whammy bar. And it's gonna be loud.
+// And that is my whammy bar. And it's gonna be loud...
 //https://www.youtube.com/watch?v=j8O3zC4E1NI
 
 function testFunction() {

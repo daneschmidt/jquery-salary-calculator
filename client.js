@@ -1,14 +1,20 @@
+//create array to store employee info objects 
 const employeeInfo = [];
+//create a variable that will hold the total of the inputed salary values
 let monthlyTotal = 0;
 
+
+//get the page ready to run and listen for events
 $(document).ready(init);
 
+//create the listeners that will trigger the other functions that will run our form and display
 function init() {
     console.log('we ready to rock and roll');
     $('#employeeInfoForm').on('submit', submitEmployeeInfoForm);
     $('.js-employeeInfoDisplay').on('click', '.js-button-bye', removeEmployee);
 }
 
+//this function will take the values of the input fields on the forms and make them objects as well as push them to the array. Also calls the render function to redraw the form
 function submitEmployeeInfoForm(event) {
     event.preventDefault();
     
@@ -22,7 +28,7 @@ function submitEmployeeInfoForm(event) {
         }
 
         addEmployee(employeeInfoObject); 
-        // monthlyTotal += employeeInfoObject.annualSalary;
+
         render();
         
 
@@ -30,18 +36,9 @@ function submitEmployeeInfoForm(event) {
 
     resetInputs();
 
-    // divideIt();
-
     bleedingCash();
 
 }
-
-// function calculateMonthly(){
-//     finalTotal = 0;
-//     for ( let employee of employeeInfo){
-//         finalTotal += (employee.annualSalary / 12);
-//     }
-// }
 
 function bleedingCash() {
     if(monthlyTotal >= 20000) {

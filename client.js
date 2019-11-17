@@ -40,6 +40,7 @@ function submitEmployeeInfoForm(event) {
 
 }
 
+//this function will check to see if the monthlyTotal is greater than or equal to 20000, if so it will turn the text color of the total at the bottom red.  I also have it set to console log "we are bleeding cash boss"
 function bleedingCash() {
     if(monthlyTotal >= 20000) {
         $('.js-monthly-total-display').css("color", "red",);
@@ -51,12 +52,14 @@ function bleedingCash() {
 
 }
 
+//this function will push the newly entered and created employee object into the array and then run the render function
 function addEmployee(employeeInfoObject) {
     employeeInfo.push(employeeInfoObject);
     render();
 
 }
 
+//this function is created to do the math needed to convert the annual salary total to a monthly value... basically divide by 12
 function findTotal() {
     monthlyTotal = 0;
     for (let employee of employeeInfo) {
@@ -66,6 +69,7 @@ function findTotal() {
 
 }
 
+//this function is redrawing the portion of the screen that I have targeted which contains the information table I wish to update each time the submit button is clicked.  I need to dig further on this one... I know that its looping through the array here... but im not clear on the mechanics of exactly what is happening here... I plan to rewatch the lecture videos this week surronding this topic.
 function render() {
     $('.js-employeeInfoDisplay').empty();
     findTotal();
@@ -89,14 +93,15 @@ function render() {
     $('#monthly-total').text(`Monthly Salary Total : $${monthlyTotal.toFixed(2)}`);
 }
 
+//this function will remove the employee from the array... the 'id' portion of this and how exactly that is working is something I need to clear up FOR SURE.
 function removeEmployee(){
     const id = $(this).parent().data('id');
     employeeInfo.splice(id, 1);
-    // $(this).parent().remove();
     render();
 
 }
 
+//this function just simply resets the input values of the corresponding input fields on the display back to the placeholders when the submit button is clicked
 function resetInputs(){
     $('#firstName').val(``);
     $('#lastName').val(``);
@@ -105,6 +110,25 @@ function resetInputs(){
     $('#annualSalary').val(``);
 
 }
+
+//Now Stevie, now don't be nervous, honey, ok?
+// I'm gonna go in and I'm gonna introduce you and then you're gonna come in with your guitar and you're gonna play that nice, nice music you were telling me about
+// And while you're doing that, I'll be sitting in the back of the room.
+// we'll have such a good time, so don't be nervous honey.
+// It will relax everybody and we'll be so happy.
+// I'm gonna go now, I'll introduce you, ok?
+// Heads up. Now you kids you, all of you, calm down.
+// That's good, ok.
+// Everyone in your own seats, that's good. ok.
+// now, little Stevie Vai is going to play a composition on the guitar.
+// He wrote it all by himself.
+// Ok. Stevie, bring your three friends up, they can play with you.
+// That Stevie Vai, what a nice little boy.
+// I wrote this song for all my friends.
+// When I grow up, I'm gonna be a famous rock 'n' roll guitar player.
+// Love it, eh, he, he, go ahead.
+// And that is my whammy bar. And it's gonna be loud.
+//https://www.youtube.com/watch?v=j8O3zC4E1NI
 
 function testFunction() {
 console.log('you passed the test');

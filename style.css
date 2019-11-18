@@ -5,13 +5,13 @@ table {
 
 
 th {
-    background-color: rgb(60, 59, 59);
+    background-color: black;
     padding: 10px;
     text-align: left;
     font-family: 'Baloo Bhai', cursive;
     font-size: 25px;
     margin: 30px;
-    color: lightgray;
+    color: white;
 
     
 }
@@ -36,19 +36,19 @@ h2 {
 
 h1 {
     font-family: 'Baloo Bhai', cursive;
-    font-size: 35px;
-    color: rgb(60, 59, 59);
+    font-size: 45px;
 
 }
 
 body {
-    background-color: rgb(222, 223, 225);
+    background-image: url(cashBgUse.png);
 
 
 }
 
 p {
     font-family: 'Baloo Bhai', cursive;
-    font-size: 25px;
+    font-size: 30px;
+    margin: 30px;
 
 }

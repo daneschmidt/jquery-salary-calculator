@@ -28,30 +28,26 @@ function submitEmployeeInfoForm(event) {
 
             monthlySalary: parseInt($('#annualSalary').val()) /12
 
-
-
         }
 
         addEmployee(employeeInfoObject); 
-
         render();
-        
-
-        console.log(employeeInfo);
 
     resetInputs();
-
-    bleedingCash();
 
 }
 
 //this function will check to see if the monthlyTotal is greater than or equal to 20000, if so it will turn the text color of the total at the bottom red.  I also have it set to console log "we are bleeding cash boss"
+
+//trying to figure out why after I delete the person thats making too much money and ticks the text red here .. once deleted the total amount remains red??
 function bleedingCash() {
     if(monthlyTotal >= 20000) {
         $('.js-monthly-total-display').css("color", "red",);
         console.log ('we are bleeding cash boss');
 
     }else {
+        $('.js-monthly-total-display').css("color", "black",);
+        console.log ('you can def afford that new Vette bossman!');
 
     }
 
@@ -71,6 +67,8 @@ function findTotal() {
         monthlyTotal += employee.annualSalary /12;
 
     }
+
+    bleedingCash();
 
 }
 

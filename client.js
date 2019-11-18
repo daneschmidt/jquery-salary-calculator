@@ -118,10 +118,6 @@ function resetInputs(){
 
 }
 
-
-
-
-
 // When I grow up, I'm gonna be a famous rock 'n' roll guitar player.
 // And that is my whammy bar. And it's gonna be loud...
 //https://www.youtube.com/watch?v=j8O3zC4E1NI
